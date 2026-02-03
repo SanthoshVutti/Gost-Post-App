@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { formatDistanceToNow } from "date-fns";
 import SecretForm from "./SecretForm"; // <-- add this import
-
+const API_BASE=process.env.REACT_APP_API_URL ||'http://localhost:5000';
 function App() {
   const [secrets, setSecrets] = useState([]);
   const [likingId, setLikingId] = useState(null);
