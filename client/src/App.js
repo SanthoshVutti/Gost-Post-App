@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchSecrets = async () => {
       try {
-        const response = await axios.get("/api/secrets");
+        const response = await axios.get(`${API_BASE}/api/secrets`);
         setSecrets(response.data);
       } catch (err) {
         console.log("Error fetching data:", err);
@@ -29,7 +29,7 @@ function App() {
   const handleLike = async (id) => {
     try {
       setLikingId(id);
-      const res = await axios.put(`/api/secrets/${id}/like`);
+      const res = await axios.put(`${API_BASE}/api/secrets/${id}/like`);
       // update the secret in state with the response
       setSecrets((prev) => prev.map((s) => (s._id === id ? res.data : s)));
     } catch (err) {
