@@ -1,0 +1,107 @@
+:root {
+  --bg-color: #2e0f25;
+  --card-bg: #1b273b;
+  --text-primary: #f8fafc;
+  --text-secondary: #536174;
+  --accent-color: #7542eb;
+  --accent-hover: #7442ca;
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  color:#ad5858;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header .title {
+  background: linear-gradient(to right, #c084fc, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header .emoji {
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: unset;
+  margin-right: 8px;
+}
+
+/* Secret Card */
+.secret-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid #334155;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.secret-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Category Tag */
+.category-tag {
+  background: #7c9bc7;
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Secret Text */
+.secret-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Like Button */
+.like-btn {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.like-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: rgba(55, 31, 112, 0.1);
+}
