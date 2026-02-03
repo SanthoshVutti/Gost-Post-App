@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./SecretForm.css";
-
+const API_BASE = "https://gost-post-app-1.onrender.com"||"http://localhost:5000";
 const SecretForm = ({ onNewSecret }) => {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("random");
@@ -22,7 +22,7 @@ const SecretForm = ({ onNewSecret }) => {
     console.log("Posting secret...", { text, category });
 
     try {
-      const response = await axios.post("/api/secrets", {
+      const response = await axios.post(`${API_BASE}/api/secrets`, {
         text,
         category,
       });
