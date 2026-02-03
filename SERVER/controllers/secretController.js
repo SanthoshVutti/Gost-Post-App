@@ -6,6 +6,7 @@ const getSecrets = async (req,res)=>{
         const secrets=(await Secret.find()).sort({createdAt:-1});
         res.json(secrets);
     } catch (error){
+        console.log("Error at get ",error);
         res.status(500).json({message:error.message});
     }
 };
@@ -16,6 +17,7 @@ const createSecret = async (req,res)=>{
         const newSecret = await Secret.create({text,category});
         res.status(201).json(newSecret);
     } catch(error){
+         console.log("Error at post ",error);
         res.status(500).json({message:error.message});
     }
 };
@@ -36,6 +38,7 @@ const likeSecret = async (req,res)=>{
         }
         res.json(secret);
     } catch(error){
+         console.log("Error at put ",error);
         res.status(500).json({message:error.message});
     }
 };
