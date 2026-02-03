@@ -19,7 +19,7 @@ mongoose
     console.log("✅ Connected to MongoDB Atlas");
   })
   .catch((err) => {
-    console.log("❌ Database Connection Error:", err);
+    console.log("Database Connection Error:", err);
   });
 app.use("/api/secrets", secretRoutes);
 
