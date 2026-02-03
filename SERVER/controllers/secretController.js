@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const getSecrets = async (req,res)=>{
     try{
-        const secrets=(await Secret.find()).sort({createdAt:-1});
+        const secrets=await Secret.find().sort({createdAt:-1});
         res.json(secrets);
     } catch (error){
         console.log("Error at get ",error);
